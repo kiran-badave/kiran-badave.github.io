@@ -57,6 +57,7 @@ const portfolioData = {
                 "Developed and customized various dashboards using ECharts, Carbon Charts, and D3 Charts",
                 "Developed high-quality React.js UI components in collaboration with the UX team, using <strong>Figma</strong> for design integration",
                 "Implemented <strong>end-to-end testing</strong> with <strong>Playwright</strong>, with experience in <strong>Cypress</strong>, and unit testing using Jest and Enzyme",
+                "Established and maintained <strong>CI/CD pipelines</strong> using <strong>Travis CI</strong>, <strong>TeamCity</strong>, and <strong>IBM Secure Pipelines Service (SPS)</strong>, automating build, test, and deployment processes for streamlined releases",
                 "Integrated AI assistance with Watsonx Orchestration, developed skills, and added custom APIs to deliver product-specific insights on z Mainframe activities",
                 "Implemented secure login SSO, 2FA, user, role and permission management, and user interfaces using Keycloak framework",
                 "Integrated <strong>i18next</strong> for UI internationalization",
@@ -74,6 +75,7 @@ const portfolioData = {
                 "Front-end": "React, Javascript, HTML, CSS, SCSS, Redux, Zustand, Carbon UI design system",
                 "Back-end": "Node.JS, Typescript, Express, REST API, Java",
                 "Testing": "Playwright, Cypress, Jest, RTL, Enzyme",
+                "CI/CD": "Travis CI, TeamCity, Secure Pipelines Service (SPS)",
                 "Tools": "Webpack, Vite, i18next, Storybook, Figma UX design tool, K8S, Docker",
                 "Database": "PostgreSQL, OpenSearch",
                 "Graphs": "D3 force graph, Echarts, Carbon Charts",
@@ -144,6 +146,31 @@ const portfolioData = {
         }
     ],
 
+    technicalSkills: [
+        { name: "React.js", years: 4, category: "Frontend" },
+        { name: "JavaScript/ES6", years: 7, category: "Frontend" },
+        { name: "TypeScript", years: 4, category: "Frontend" },
+        { name: "HTML5/CSS3", years: 7, category: "Frontend" },
+        { name: "Redux/Zustand", years: 4, category: "Frontend" },
+        { name: "Java", years: 5, category: "Backend" },
+        { name: "Spring Boot", years: 5, category: "Backend" },
+        { name: "Node.js", years: 4, category: "Backend" },
+        { name: "Express.js", years: 4, category: "Backend" },
+        { name: "REST API", years: 7, category: "Backend" },
+        { name: "MySQL", years: 6, category: "Database" },
+        { name: "PostgreSQL", years: 3, category: "Database" },
+        { name: "MongoDB/NoSQL", years: 2, category: "Database" },
+        { name: "Playwright", years: 3, category: "Testing" },
+        { name: "Cypress", years: 2, category: "Testing" },
+        { name: "Jest", years: 4, category: "Testing" },
+        { name: "CI/CD (Travis, TeamCity)", years: 3, category: "DevOps" },
+        { name: "Docker", years: 2, category: "DevOps" },
+        { name: "Kubernetes", years: 2, category: "DevOps" },
+        { name: "Git/GitHub", years: 7, category: "Tools" },
+        { name: "Figma", years: 3, category: "Tools" },
+        { name: "Webpack/Vite", years: 4, category: "Tools" }
+    ],
+
     education: [
         {
             icon: "🎓",
@@ -168,5 +195,3 @@ const portfolioData = {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = portfolioData;
 }
-
-// Made with Bob

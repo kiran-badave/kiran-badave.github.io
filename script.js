@@ -6,6 +6,205 @@
  */
 
 // ===================================
+// Populate Content from data.js
+// ===================================
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof portfolioData !== 'undefined') {
+        populatePortfolioContent();
+    }
+});
+
+function populatePortfolioContent() {
+    const data = portfolioData;
+    
+    // Update Hero Section
+    document.querySelector('.hero-name').textContent = data.personal.name;
+    document.querySelector('.hero-subtitle').textContent = data.personal.title;
+    document.querySelector('.profile-image').src = data.personal.profileImage;
+    document.querySelector('.profile-image').alt = data.personal.name;
+    
+    // Update hero description with summary
+    const heroDesc = document.querySelector('.hero-description');
+    if (heroDesc) {
+        // Use first 200 characters of summary for hero
+        heroDesc.textContent = data.summary.substring(0, 200) + '...';
+    }
+    
+    // Update Stats
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const statLabels = document.querySelectorAll('.stat-label');
+    data.stats.forEach((stat, index) => {
+        if (statNumbers[index]) {
+            statNumbers[index].setAttribute('data-count', stat.number);
+        }
+        if (statLabels[index]) {
+            statLabels[index].textContent = stat.label;
+        }
+    });
+    
+    // Update About Section
+    const aboutSection = document.querySelector('.about-text');
+    if (aboutSection) {
+        // Split summary into paragraphs (by sentences)
+        const sentences = data.summary.match(/[^.!?]+[.!?]+/g) || [data.summary];
+        const paragraphs = [];
+        let currentPara = '';
+        
+        sentences.forEach((sentence, i) => {
+            currentPara += sentence;
+            if ((i + 1) % 2 === 0 || i === sentences.length - 1) {
+                paragraphs.push(currentPara.trim());
+                currentPara = '';
+            }
+        });
+        
+        const aboutDescriptions = aboutSection.querySelectorAll('.about-description');
+        paragraphs.forEach((para, index) => {
+            if (aboutDescriptions[index]) {
+                aboutDescriptions[index].textContent = para;
+            }
+        });
+    }
+    
+    // Update About Info
+    const infoItems = document.querySelectorAll('.about-info .info-item');
+    if (infoItems.length >= 4) {
+        infoItems[0].querySelector('.info-value').textContent = data.personal.location;
+        infoItems[1].querySelector('.info-value').textContent = data.personal.email;
+        infoItems[2].querySelector('.info-value a').href = data.personal.github;
+        infoItems[2].querySelector('.info-value a').textContent = data.personal.githubDisplay;
+        infoItems[3].querySelector('.info-value a').href = data.personal.linkedin;
+        infoItems[3].querySelector('.info-value a').textContent = data.personal.linkedinDisplay;
+    }
+    
+    // Update Experience Section
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    data.experience.forEach((exp, index) => {
+        if (timelineItems[index]) {
+            const item = timelineItems[index];
+            
+            // Update company info
+            item.querySelector('.company-name').textContent = exp.company;
+            item.querySelector('.company-location').textContent = exp.location;
+            item.querySelector('.timeline-date').textContent = `${exp.duration} (${exp.durationYears})`;
+            item.querySelector('.job-title').textContent = exp.role;
+            
+            // Update products
+            const productList = item.querySelector('.product-list');
+            if (productList && exp.products) {
+                productList.innerHTML = exp.products.map(product =>
+                    `<li><a href="${product.url}" target="_blank" rel="noopener">${product.name}</a></li>`
+                ).join('');
+            }
+            
+            // Update responsibilities
+            const responsibilitiesList = item.querySelector('.responsibilities');
+            if (responsibilitiesList) {
+                responsibilitiesList.innerHTML = exp.responsibilities.map(resp =>
+                    `<li>${resp}</li>`
+                ).join('');
+            }
+            
+            // Update technologies
+            const techCategories = item.querySelector('.tech-categories');
+            if (techCategories && exp.technologies) {
+                techCategories.innerHTML = Object.entries(exp.technologies).map(([key, value]) =>
+                    `<div class="tech-category"><strong>${key}:</strong> ${value}</div>`
+                ).join('');
+            }
+        }
+    });
+    
+    // Update Skills Section
+    const skillCategories = document.querySelectorAll('.skill-category');
+    data.skills.forEach((skill, index) => {
+        if (skillCategories[index]) {
+            skillCategories[index].querySelector('.skill-icon').textContent = skill.icon;
+            skillCategories[index].querySelector('h3').textContent = skill.title;
+            skillCategories[index].querySelector('p').textContent = skill.description;
+        }
+    });
+    
+    // Update Education Section
+    const educationCards = document.querySelectorAll('.education-card');
+    data.education.forEach((edu, index) => {
+        if (educationCards[index]) {
+            const card = educationCards[index];
+            card.querySelector('.education-icon').textContent = edu.icon;
+            card.querySelector('h3').textContent = edu.degree;
+            card.querySelector('.education-degree').textContent = edu.field;
+            card.querySelector('.education-institution').textContent = edu.institution;
+            card.querySelector('.education-year').textContent = edu.duration;
+        }
+    });
+    
+    // Update Technical Skills Section
+    if (data.technicalSkills) {
+        const categories = {
+            'Frontend': document.getElementById('frontend-skills'),
+            'Backend': document.getElementById('backend-skills'),
+            'Database': document.getElementById('database-skills'),
+            'Testing': document.getElementById('testing-skills'),
+            'DevOps': document.getElementById('devops-skills'),
+            'Tools': document.getElementById('tools-skills')
+        };
+        
+        // Group skills by category
+        const groupedSkills = data.technicalSkills.reduce((acc, skill) => {
+            if (!acc[skill.category]) {
+                acc[skill.category] = [];
+            }
+            acc[skill.category].push(skill);
+            return acc;
+        }, {});
+        
+        // Populate each category
+        Object.entries(groupedSkills).forEach(([category, skills]) => {
+            const container = categories[category];
+            if (container) {
+                container.innerHTML = skills.map(skill => {
+                    const percentage = Math.min((skill.years / 7) * 100, 100); // Max 7 years = 100%
+                    return `
+                        <div class="skill-item">
+                            <span class="skill-name">${skill.name}</span>
+                            <div class="skill-years">
+                                <span class="years-badge">${skill.years}+ ${skill.years === 1 ? 'year' : 'years'}</span>
+                                <div class="skill-bar">
+                                    <div class="skill-bar-fill" style="width: ${percentage}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        });
+    }
+    
+    // Update Contact Section
+    const contactItems = document.querySelectorAll('.contact-item');
+    if (contactItems.length >= 4) {
+        // Email
+        contactItems[0].querySelector('a').href = `mailto:${data.personal.email}`;
+        contactItems[0].querySelector('a').textContent = data.personal.email;
+        
+        // Phone
+        const phoneDetails = contactItems[1].querySelector('.contact-details');
+        phoneDetails.innerHTML = '<h3>Phone</h3>' +
+            data.personal.phone.map(phone => `<p>${phone}</p>`).join('');
+        
+        // Location
+        const locationDetails = contactItems[2].querySelector('.contact-details');
+        const addressParts = data.personal.address.split(',');
+        locationDetails.innerHTML = '<h3>Location</h3>' +
+            addressParts.map(part => `<p>${part.trim()}</p>`).join('');
+        
+        // LinkedIn
+        contactItems[3].querySelector('a').href = data.personal.linkedin;
+        contactItems[3].querySelector('a').textContent = data.personal.linkedinDisplay;
+    }
+}
+
+// ===================================
 // GSAP Initialization
 // ===================================
 gsap.registerPlugin(ScrollTrigger);

@@ -72,6 +72,12 @@
             <div id="skillsContainer" class="skills-grid"></div>
         </section>
 
+        <!-- Technical Skills Section -->
+        <section class="cv-section">
+            <h3 class="section-title">Technical Skills & Experience</h3>
+            <div id="technicalSkillsContainer" class="technical-skills-grid"></div>
+        </section>
+
         <!-- Education Section -->
         <section class="cv-section">
             <h3 class="section-title">Education</h3>
@@ -166,6 +172,44 @@
                 `;
                 skillsContainer.appendChild(skillDiv);
             });
+
+            // Technical Skills
+            if (portfolioData.technicalSkills) {
+                const technicalSkillsContainer = document.getElementById('technicalSkillsContainer');
+                
+                // Group skills by category
+                const groupedSkills = portfolioData.technicalSkills.reduce((acc, skill) => {
+                    if (!acc[skill.category]) {
+                        acc[skill.category] = [];
+                    }
+                    acc[skill.category].push(skill);
+                    return acc;
+                }, {});
+                
+                // Create category sections
+                Object.entries(groupedSkills).forEach(([category, skills]) => {
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'tech-category-section';
+                    
+                    const skillsList = skills
+                        .sort((a, b) => b.years - a.years) // Sort by years descending
+                        .map(skill => `
+                            <div class="tech-skill-item">
+                                <span class="tech-skill-name">${skill.name}</span>
+                                <span class="tech-skill-years">${skill.years}+ ${skill.years === 1 ? 'year' : 'years'}</span>
+                            </div>
+                        `).join('');
+                    
+                    categoryDiv.innerHTML = `
+                        <h4 class="tech-category-title">${category}</h4>
+                        <div class="tech-skills-list">
+                            ${skillsList}
+                        </div>
+                    `;
+                    
+                    technicalSkillsContainer.appendChild(categoryDiv);
+                });
+            }
 
             // Education
             const educationContainer = document.getElementById('educationContainer');
