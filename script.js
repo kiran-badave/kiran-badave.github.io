@@ -6,13 +6,35 @@
  */
 
 // ===================================
-// Populate Content from data.js
+// Theme Management
 // ===================================
+let currentTheme = localStorage.getItem('theme') || 'dark';
+
+// Apply saved theme on load
+document.documentElement.setAttribute('data-theme', currentTheme);
+
+// Theme Toggle
 document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('themeToggle');
+    
+    // Theme toggle handler
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            localStorage.setItem('theme', currentTheme);
+        });
+    }
+    
+    // Initialize content
     if (typeof portfolioData !== 'undefined') {
         populatePortfolioContent();
     }
 });
+
+// ===================================
+// Populate Content from data.js
+// ===================================
 
 function populatePortfolioContent() {
     const data = portfolioData;
@@ -299,11 +321,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-        nav.style.background = 'rgba(15, 23, 42, 0.95)';
-        nav.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+        nav.classList.add('scrolled');
     } else {
-        nav.style.background = 'rgba(15, 23, 42, 0.8)';
-        nav.style.boxShadow = 'none';
+        nav.classList.remove('scrolled');
     }
 });
 
