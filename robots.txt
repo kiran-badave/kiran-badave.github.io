@@ -1,0 +1,31 @@
+# robots.txt for https://kiran-badave.github.io/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://kiran-badave.github.io/sitemap.xml
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Disallow crawling of specific files (if any)
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /*.md$
+
+# Crawl-delay (optional, in seconds)
+Crawl-delay: 1
