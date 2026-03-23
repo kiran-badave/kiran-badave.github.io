@@ -96,10 +96,22 @@
             <div id="skillsContainer" class="skills-grid"></div>
         </section>
 
+        <!-- System Design & Architecture Section -->
+        <section class="cv-section">
+            <h3 class="section-title">System Design & Architecture</h3>
+            <ul id="systemDesignContainer" class="system-design-list"></ul>
+        </section>
+
         <!-- Technical Skills Section -->
         <section class="cv-section">
             <h3 class="section-title">Technical Skills & Experience</h3>
             <div id="technicalSkillsContainer" class="technical-skills-grid"></div>
+        </section>
+
+        <!-- Key Highlights Section -->
+        <section class="cv-section">
+            <h3 class="section-title">Key Highlights</h3>
+            <ul id="keyHighlightsContainer" class="key-highlights-list"></ul>
         </section>
 
         <!-- Education Section -->
@@ -148,8 +160,8 @@
             document.getElementById('linkedin').textContent = portfolioData.personal.linkedinDisplay;
             document.getElementById('profilePhoto').src = portfolioData.personal.profileImage;
 
-            // Summary
-            document.getElementById('summary').textContent = portfolioData.summary;
+            // Summary (use shorter version)
+            document.getElementById('summary').textContent = portfolioData.shortSummary || portfolioData.summary;
 
             // Experience
             const experienceContainer = document.getElementById('experienceContainer');
@@ -245,6 +257,26 @@
                     `;
                     
                     technicalSkillsContainer.appendChild(categoryDiv);
+                });
+            }
+
+            // System Design & Architecture
+            if (portfolioData.systemDesign) {
+                const systemDesignContainer = document.getElementById('systemDesignContainer');
+                portfolioData.systemDesign.forEach(item => {
+                    const li = document.createElement('li');
+                    li.innerHTML = item;
+                    systemDesignContainer.appendChild(li);
+                });
+            }
+
+            // Key Highlights
+            if (portfolioData.keyHighlights) {
+                const keyHighlightsContainer = document.getElementById('keyHighlightsContainer');
+                portfolioData.keyHighlights.forEach(highlight => {
+                    const li = document.createElement('li');
+                    li.innerHTML = highlight;
+                    keyHighlightsContainer.appendChild(li);
                 });
             }
 

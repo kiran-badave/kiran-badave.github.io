@@ -614,4 +614,65 @@ body {
     font-weight: 700;
     color: #1a1a1a;
 }
+/* System Design & Architecture Section */
+.system-design-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.system-design-list li {
+    padding: 8px 0 8px 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.system-design-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.system-design-list li strong {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Key Highlights Section */
+.key-highlights-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.key-highlights-list li {
+    padding: 8px 0 8px 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.key-highlights-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.key-highlights-list li strong {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Print styles for new sections */
+@media print {
+    .system-design-list li,
+    .key-highlights-list li {
+        page-break-inside: avoid;
+    }
+}
 

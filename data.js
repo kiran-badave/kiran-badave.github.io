@@ -26,7 +26,11 @@ const portfolioData = {
         profileImage: "assets/profile_picture.png"
     },
 
+    // Detailed CV Summary (comprehensive)
     summary: "Driven front-end professional, eager to craft interactive and intuitive interfaces that inspire users and drive engagement. I have more than seven years of experience in Software Engineering with a strong background in full-stack development, specializing in React.js, TypeScript, and Java-based backend services. Proven expertise in building scalable Monorepos, integrating authentication systems like Keycloak, and developing interactive dashboards with D3, ECharts, and Carbon Charts. Skilled in performance optimization, internationalization, accessibility compliance (WCAG), and end-to-end testing with Playwright and Cypress. Adept at API development using Java Spring Boot, database management with MySQL and PostgreSQL, and working with cloud-native technologies like Kubernetes and Docker. Strong collaborator with a track record of mentoring, leading teams, and implementing best practices for scalable and maintainable software solutions.",
+
+    // Shorter Summary (for cv-print.html)
+    shortSummary: "Staff Software Engineer with 8+ years of experience in full-stack development, specializing in React.js, TypeScript, and Java Spring Boot. Proven expertise in building scalable architectures, authentication systems (Keycloak, SSO), and interactive dashboards. Skilled in performance optimization, accessibility (WCAG), CI/CD pipelines, and cloud-native technologies (Docker, Kubernetes). Strong collaborator with experience in mentoring and leading teams.",
 
     // Product Company Optimized Summary (for cv-product-company.html)
     productCompanySummary: "Staff Software Engineer with 8+ years of experience building scalable, cloud-native applications using React, TypeScript, and Java Spring Boot. Expertise in designing modular frontend architectures, secure authentication systems (SSO, RBAC), and high-performance APIs. Hands-on experience with microservices, Docker, Kubernetes, and CI/CD pipelines. Strong focus on performance optimization, accessibility (WCAG), and scalable system design.",
