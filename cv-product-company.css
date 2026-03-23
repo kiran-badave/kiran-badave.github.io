@@ -47,10 +47,10 @@ body {
 }
 
 .contact-bar {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 12px; */
     font-size: 9pt;
     margin-bottom: 4px;
 }
@@ -316,6 +316,29 @@ body {
     .compact-list li,
     .skills-grid div {
         font-size: 9pt;
+    }
+
+    /* Maintain grid layouts in print */
+    .skills-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 5px 15px !important;
+    }
+
+    .education-compact {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+    }
+
+    .compact-list {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 4px 15px !important;
+    }
+
+    .compact-list.highlights {
+        grid-template-columns: 1fr !important;
     }
 }
 
