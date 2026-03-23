@@ -13,7 +13,7 @@ const portfolioData = {
         name: "Kiran Badave",
         title: "Staff Software Engineer",
         subtitle: "Software Developer - UI/UX",
-        location: "Pune, Maharashtra, India",
+        location: "India",
         email: "kiranbadave06@gmail.com",
         phone: ["+91 967 303 6719", "+91 797 208 1821"],
         linkedin: "https://www.linkedin.com/in/kiran-badave",
@@ -27,6 +27,9 @@ const portfolioData = {
     },
 
     summary: "Driven front-end professional, eager to craft interactive and intuitive interfaces that inspire users and drive engagement. I have more than seven years of experience in Software Engineering with a strong background in full-stack development, specializing in React.js, TypeScript, and Java-based backend services. Proven expertise in building scalable Monorepos, integrating authentication systems like Keycloak, and developing interactive dashboards with D3, ECharts, and Carbon Charts. Skilled in performance optimization, internationalization, accessibility compliance (WCAG), and end-to-end testing with Playwright and Cypress. Adept at API development using Java Spring Boot, database management with MySQL and PostgreSQL, and working with cloud-native technologies like Kubernetes and Docker. Strong collaborator with a track record of mentoring, leading teams, and implementing best practices for scalable and maintainable software solutions.",
+
+    // Product Company Optimized Summary (for cv-product-company.html)
+    productCompanySummary: "Staff Software Engineer with 8+ years of experience building scalable, cloud-native applications using React, TypeScript, and Java Spring Boot. Expertise in designing modular frontend architectures, secure authentication systems (SSO, RBAC), and high-performance APIs. Hands-on experience with microservices, Docker, Kubernetes, and CI/CD pipelines. Strong focus on performance optimization, accessibility (WCAG), and scalable system design.",
 
     stats: [
         { number: 7, label: "Years Experience" },
@@ -188,6 +191,56 @@ const portfolioData = {
             duration: "2013 – 2016",
             logo: "assets/images/solapur-uni-logo.png"
         }
+    ],
+
+    // Product Company Optimized Experience (Impact-driven)
+    productCompanyExperience: [
+        {
+            company: "IBM",
+            role: "Staff Software Engineer",
+            duration: "May 2022 – Present",
+            location: "Bengaluru",
+            impacts: [
+                "Architected a scalable <strong>React-based monorepo</strong>, improving code reusability and reducing development effort by <strong>~30%</strong>",
+                "Implemented secure <strong>authentication & authorization using Keycloak (SSO, RBAC, 2FA)</strong> for enterprise applications",
+                "Developed high-performance <strong>interactive dashboards</strong> using D3, ECharts, and Carbon Charts",
+                "Built and integrated <strong>REST APIs (Node.js / Java)</strong> for real-time data processing",
+                "Established <strong>CI/CD pipelines (Travis CI, TeamCity)</strong>, improving deployment speed and reliability",
+                "Improved <strong>application accessibility (WCAG)</strong> by <strong>80%</strong>",
+                "Mentored engineers and enforced best practices, improving overall team productivity"
+            ]
+        },
+        {
+            company: "Juno Software Systems",
+            role: "Junior System Architect",
+            duration: "Dec 2017 – May 2022",
+            location: "Pune",
+            impacts: [
+                "Led development of ERP modules (Academic, Finance, Inventory), improving performance by <strong>~40%</strong>",
+                "Designed and developed <strong>RESTful APIs using Java Spring Boot</strong>",
+                "Implemented <strong>SSO (Google, Microsoft Azure AD)</strong> for secure authentication",
+                "Integrated third-party platforms (Microsoft Teams, Google Meet)",
+                "Optimized <strong>MySQL performance</strong> using indexing, caching, and query tuning",
+                "Led a team of 4 engineers, ensuring quality delivery and scalability"
+            ]
+        }
+    ],
+
+    // System Design & Architecture highlights
+    systemDesign: [
+        "Designed modular frontend architecture using <strong>monorepo approach</strong>",
+        "Experience with <strong>microservices architecture and REST API design</strong>",
+        "Implemented <strong>authentication systems (OAuth2, SSO, RBAC)</strong>",
+        "Hands-on with <strong>Docker and Kubernetes (basic)</strong>",
+        "Built <strong>CI/CD pipelines</strong> for automated build, test, and deployment"
+    ],
+
+    // Key Highlights for product companies
+    keyHighlights: [
+        "8+ years experience in <strong>full-stack development (React + Java)</strong>",
+        "Strong expertise in <strong>authentication systems (Keycloak, SSO)</strong>",
+        "Experience in <strong>scalable frontend architecture & performance optimization</strong>",
+        "Proven ability to <strong>lead teams and deliver production-grade systems</strong>"
     ]
 };
 

@@ -12,7 +12,10 @@ A modern, animated portfolio website showcasing my professional experience, skil
 - **Interactive Elements**: Hover effects, magnetic buttons, and tilt animations
 - **Performance Optimized**: Fast loading and smooth animations
 - **Accessibility**: WCAG compliant with proper semantic HTML
-- **Printable CV**: Professional print-optimized CV version (cv-print.html)
+- **Dual CV Versions**:
+  - **Product Company CV** (1-Page) - Impact-driven, ATS-optimized for ₹30-45+ LPA roles
+  - **Detailed CV** (Multi-Page) - Comprehensive experience showcase
+- **Easy CV Switching**: Toggle between CV versions with one click
 - **Centralized Data**: Single source of truth for all content (data.js)
 - **Profile Picture**: Animated profile photo with 3D effects
 - **Easter Egg**: Hidden Konami code surprise! 🎮
@@ -25,15 +28,20 @@ Visit the live website: [https://kiran-badave.github.io/](https://kiran-badave.g
 
 ```
 kiran-portfolio-website/
-├── index.html          # Main portfolio website
-├── cv-print.html       # Printable CV version
-├── styles.css          # Portfolio CSS styles and animations
-├── cv-print.css        # Print-optimized CV styles
+├── index.html                  # Main portfolio website
+├── cv-product-company.html     # Product Company CV (1-Page, ATS-optimized)
+├── cv-product-company.css      # Product Company CV styles
+├── cv-print.html               # Detailed CV (Multi-Page)
+├── cv-print.css                # Detailed CV styles
+├── styles.css                  # Portfolio CSS styles and animations
 ├── script.js           # JavaScript and GSAP animations
 ├── data.js             # Centralized data source (SINGLE SOURCE OF TRUTH)
-├── README.md           # Project documentation
-├── DEPLOYMENT.md       # Deployment guide
-├── ASSETS_GUIDE.md     # Assets organization guide
+├── README.md                   # Project documentation
+├── CV_VERSIONS_GUIDE.md        # Guide for using both CV versions
+├── DEPLOYMENT.md               # Deployment guide
+├── ASSETS_GUIDE.md             # Assets organization guide
+├── DATA_MANAGEMENT.md          # Data management guide
+├── THEME_AND_LANGUAGE_GUIDE.md # Theme & language guide
 ├── .gitignore          # Git ignore file
 ├── assets/             # Static assets folder
 │   ├── profile_picture.png  # Your profile picture
