@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
     populatePersonalInfo();
     
     // Populate summary
-    populateSummary();
+    // populateSummary();
     
     // Populate experience
-    populateExperience();
+    // populateExperience();
     
     // Populate system design
-    populateSystemDesign();
+    //populateSystemDesign();
     
     // Populate technical skills
     populateTechnicalSkills();
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     populateEducation();
     
     // Populate key highlights
-    populateKeyHighlights();
+    // populateKeyHighlights();
 });
 
 function populatePersonalInfo() {
