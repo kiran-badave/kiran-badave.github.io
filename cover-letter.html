@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Letter - Kiran Badave</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cover-letter.css">
+</head>
+<body>
+    <div class="cover-letter-container">
+        <!-- Header with Contact Info -->
+        <header class="letter-header">
+            <h1 class="sender-name">KIRAN BADAVE</h1>
+            <div class="contact-info">
+                <span>📧 kiranbadave06@gmail.com</span>
+                <span>📱 +91 9673036719</span>
+                <span>🔗 linkedin.com/in/kiran-badave</span>
+                <span>💻 github.com/kiran-badave</span>
+            </div>
+            <p class="sender-location">Pune, Maharashtra, India</p>
+        </header>
+
+        <!-- Date -->
+        <div class="letter-date">
+            <p id="currentDate"></p>
+        </div>
+
+        <!-- Recipient Info (Editable) -->
+        <div class="recipient-info">
+            <p class="recipient-name" contenteditable="true">Hiring Manager</p>
+            <p class="company-name" contenteditable="true">BNY</p>
+            <p class="company-address" contenteditable="true">Pune, Maharashtra, India</p>
+        </div>
+
+        <!-- Subject Line (Editable) -->
+        <div class="subject-line">
+            <p><strong>Subject:</strong> <span contenteditable="true">Application for Senior Specialist, Full Stack Engineer (Job ID 72304)</span></p>
+        </div>
+
+        <!-- Salutation (Editable) -->
+        <div class="salutation">
+            <p contenteditable="true">Dear Hiring Manager,</p>
+        </div>
+
+        <!-- Letter Body (Editable) -->
+        <div class="letter-body">
+            <!-- Paragraph 1: Opening & Position -->
+            <p contenteditable="true">
+                I am writing to express my interest in the <strong>Senior Specialist, Full Stack Engineer</strong> position (Job ID 72304) at <strong>BNY</strong> in Pune. With over <strong>8 years of experience</strong> in full-stack development using React, Java, and cloud-native technologies, I am excited about the opportunity to contribute to BNY's Global Payments & Trade team and help build scalable, high-impact financial solutions.
+            </p>
+
+            <!-- Paragraph 2: Current Role & Achievements -->
+            <p contenteditable="true">
+                In my current role as a <strong>Staff Software Engineer at IBM</strong>, I have designed and developed scalable full-stack applications using React and Java Spring Boot, focusing on performance, security, and maintainability. I have hands-on experience building modular frontend architectures, developing high-performance REST APIs, and implementing secure authentication systems using Keycloak (SSO, RBAC, 2FA). My work has consistently improved system efficiency, including reducing development effort through monorepo architecture and enhancing accessibility by 80%.
+            </p>
+
+            <!-- Paragraph 3: Relevant Skills & Experience -->
+            <p contenteditable="true">
+                I bring strong experience in modern engineering practices that align closely with your requirements. I have worked with Docker and Kubernetes for containerized deployments, built CI/CD pipelines to automate delivery workflows, and implemented comprehensive testing strategies using Playwright, Jest, and Cypress. Additionally, my experience working with microservices and scalable systems has strengthened my ability to build reliable and production-ready applications.
+            </p>
+
+            <!-- Paragraph 4: Why This Company -->
+            <p contenteditable="true">
+                I am particularly excited about this opportunity at <strong>BNY</strong> because of its focus on innovation in financial systems and the use of cutting-edge technologies. I am eager to contribute to building scalable, data-driven solutions and collaborate with cross-functional teams to deliver high-quality software.
+            </p>
+
+            <!-- Paragraph 5: Closing -->
+            <p contenteditable="true">
+                I would welcome the opportunity to further discuss how my experience and skills align with your team's needs. Thank you for considering my application.
+            </p>
+        </div>
+
+        <!-- Closing (Editable) -->
+        <div class="letter-closing">
+            <p contenteditable="true">Sincerely,</p>
+            <div class="signature-space"></div>
+            <p class="signature-name">Kiran Badave</p>
+        </div>
+
+        <!-- Enclosure Note -->
+        <div class="enclosure">
+            <p>Enclosure: Resume/CV</p>
+        </div>
+    </div>
+
+    <!-- Print Controls -->
+    <div class="print-controls no-print">
+        <button onclick="window.print()" class="print-btn">🖨️ Print Cover Letter</button>
+        <button onclick="window.location.href='index.html'" class="back-btn">← Back to Portfolio</button>
+        <button onclick="resetTemplate()" class="reset-btn">🔄 Reset Template</button>
+    </div>
+
+    <!-- Instructions -->
+    <div class="instructions no-print">
+        <h3>📝 How to Use This Template:</h3>
+        <ol>
+            <li><strong>Edit Content:</strong> Click on any text to edit it (highlighted in light blue when editable)</li>
+            <li><strong>Customize:</strong> Update company name, position, job ID, and tailor the content</li>
+            <li><strong>Print:</strong> Click "Print Cover Letter" button or press Ctrl/Cmd + P</li>
+            <li><strong>Save as PDF:</strong> In print dialog, select "Save as PDF" as destination</li>
+            <li><strong>Reset:</strong> Click "Reset Template" to restore original content</li>
+        </ol>
+        <p><strong>💡 Tip:</strong> Keep paragraphs concise and focused. Highlight 2-3 key achievements that match the job requirements.</p>
+    </div>
+
+    <script>
+        // Set current date
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', dateOptions);
+
+        // Store original content for reset
+        const originalContent = document.querySelector('.cover-letter-container').innerHTML;
+
+        function resetTemplate() {
+            if (confirm('Are you sure you want to reset the template? All changes will be lost.')) {
+                document.querySelector('.cover-letter-container').innerHTML = originalContent;
+                // Re-set the date
+                document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', dateOptions);
+            }
+        }
+
+        // Add visual feedback for editable areas
+        document.querySelectorAll('[contenteditable="true"]').forEach(element => {
+            element.addEventListener('focus', function() {
+                this.style.backgroundColor = '#e0f2fe';
+            });
+            element.addEventListener('blur', function() {
+                this.style.backgroundColor = 'transparent';
+            });
+        });
+    </script>
+</body>
+</html>

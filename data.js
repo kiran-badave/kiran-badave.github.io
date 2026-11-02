@@ -30,7 +30,10 @@ const portfolioData = {
     summary: "Driven front-end professional, eager to craft interactive and intuitive interfaces that inspire users and drive engagement. I have more than seven years of experience in Software Engineering with a strong background in full-stack development, specializing in React.js, TypeScript, and Java-based backend services. Proven expertise in building scalable Monorepos, integrating authentication systems like Keycloak, and developing interactive dashboards with D3, ECharts, and Carbon Charts. Skilled in performance optimization, internationalization, accessibility compliance (WCAG), and end-to-end testing with Playwright and Cypress. Adept at API development using Java Spring Boot, database management with MySQL and PostgreSQL, and working with cloud-native technologies like Kubernetes and Docker. Strong collaborator with a track record of mentoring, leading teams, and implementing best practices for scalable and maintainable software solutions.",
 
     // Shorter Summary (for cv-print.html)
-    shortSummary: "Staff Software Engineer with 8+ years of experience in full-stack development, specializing in React.js, TypeScript, and Java Spring Boot. Proven expertise in building scalable architectures, authentication systems (Keycloak, SSO), and interactive dashboards. Skilled in performance optimization, accessibility (WCAG), CI/CD pipelines, and cloud-native technologies (Docker, Kubernetes). Strong collaborator with experience in mentoring and leading teams.",
+    shortSummary: "Staff Software Engineer with 8+ years of full-stack development experience specializing in React.js, TypeScript, JavaScript, and Java Spring Boot. Experienced in designing scalable frontend architectures, building reusable React monorepos and component frameworks, integrating REST APIs, and implementing secure authentication and authorization systems (Keycloak, SSO, RBAC). Proven experience in performance optimization, automated testing, CI/CD, accessibility, and cross-functional collaboration. As Pillar Lead, lead a team responsible for product security, including AI-driven automation (with Bob) to remediate security fixes. Previously led a team of four engineers; mentor developers and drive engineering best practices across enterprise software projects.",
+
+    // Professional headline (for cv-print.html)
+    cvHeadline: "Frontend / Full-Stack Engineering Leader | React, TypeScript, Java | Architecture, Performance, Security & Team Leadership",
 
     // Product Company Optimized Summary (for cv-product-company.html)
     productCompanySummary: "Staff Software Engineer with 8+ years of experience building scalable, cloud-native applications using React, TypeScript, and Java Spring Boot. Expertise in designing modular frontend architectures, secure authentication systems (SSO, RBAC), and high-performance APIs. Hands-on experience with microservices, Docker, Kubernetes, and CI/CD pipelines. Strong focus on performance optimization, accessibility (WCAG), and scalable system design.",
@@ -61,12 +64,15 @@ const portfolioData = {
             ],
             responsibilities: [
                 "Developed a React-based <strong>Monorepo</strong> from scratch, implementing service proxying, <strong>Keycloak authentication & authorization</strong>, and a custom framework for cross-project use",
-                "Developed and customized various dashboards using ECharts, Carbon Charts, and D3 Charts",
-                "Developed high-quality React.js UI components in collaboration with the UX team, using <strong>Figma</strong> for design integration",
+                "Led <strong>frontend architecture</strong> and reusable component development using <strong>React, TypeScript</strong> and modern state management (Redux, Zustand)",
                 "Implemented <strong>end-to-end testing</strong> with <strong>Playwright</strong>, with experience in <strong>Cypress</strong>, and unit testing using Jest and Enzyme",
                 "Established and maintained <strong>CI/CD pipelines</strong> using <strong>Travis CI</strong>, <strong>TeamCity</strong>, and <strong>IBM Secure Pipelines Service (SPS)</strong>, automating build, test, and deployment processes for streamlined releases",
+                "Integrated backend services, secure login SSO, 2FA, user, role and permission management (<strong>RBAC</strong>) using Keycloak framework",
                 "Integrated AI assistance with Watsonx Orchestration, developed skills, and added custom APIs to deliver product-specific insights on z Mainframe activities",
-                "Implemented secure login SSO, 2FA, user, role and permission management, and user interfaces using Keycloak framework",
+                "As <strong>Pillar Lead</strong>, manage a team responsible for <strong>product security</strong>, and built <strong>AI-based automation with Bob</strong> to remediate security fixes",
+                "Mentored engineers and introduced best practices for <strong>React coding standards</strong>, refactoring, and accessibility improvements",
+                "Developed and customized various dashboards using ECharts, Carbon Charts, and D3 Charts",
+                "Developed high-quality React.js UI components in collaboration with the UX team, using <strong>Figma</strong> for design integration",
                 "Integrated <strong>i18next</strong> for UI internationalization",
                 "Implemented <strong>Storybook</strong> for component visualization and collaboration",
                 "Integrated complex topology functionality using <strong>D3</strong> force graph, surpassing design requirements",
@@ -75,7 +81,6 @@ const portfolioData = {
                 "Basic understanding and hands-on experience with Kubernetes, Kafka, Docker, and Microservices",
                 "Identified and resolved accessibility issues per WCAG guidelines, improving accessibility by 80%",
                 "Actively participated in knowledge-sharing sessions and mentored new joiners",
-                "Introduced best practices for React coding standards and refactoring",
                 "Actively participated in ISDL and IBM initiatives, including Hackathons and ISDL events"
             ],
             technologies: {
@@ -86,7 +91,8 @@ const portfolioData = {
                 "Tools": "Webpack, Vite, i18next, Storybook, Figma UX design tool, K8S, Docker",
                 "Database": "PostgreSQL, OpenSearch",
                 "Graphs": "D3 force graph, Echarts, Carbon Charts",
-                "Others": "Keycloak for AuthN and AuthZ with Java, OAS Specifications, JSONata, Swagger, JSON Schema"
+                "Security": "Keycloak for AuthN and AuthZ with Java, SSO, 2FA, RBAC, AI-assisted security remediation with Bob",
+                "Others": "OAS Specifications, JSONata, Swagger, JSON Schema"
             }
         },
         {

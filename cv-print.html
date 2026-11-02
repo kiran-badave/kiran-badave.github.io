@@ -47,7 +47,7 @@
                     <img src="assets/profile_picture.png" alt="Kiran Badave" class="profile-photo" id="profilePhoto">
                     <div class="header-text">
                         <h1 class="name" id="name">Kiran Badave</h1>
-                        <h2 class="title" id="title">Staff Software Engineer | Full Stack (React + Java, Cloud-Native)</h2>
+                        <h2 class="title" id="title">Frontend / Full-Stack Engineering Leader | React, TypeScript, Java | Architecture, Performance, Security &amp; Team Leadership</h2>
                         <p class="location" id="location">
                             <!-- Pune, Maharashtra, India -->
                         </p>
@@ -151,7 +151,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Personal Info
             document.getElementById('name').textContent = portfolioData.personal.name;
-            document.getElementById('title').textContent = portfolioData.personal.title;
+            document.getElementById('title').textContent = portfolioData.cvHeadline || portfolioData.personal.title;
             document.getElementById('location').textContent = portfolioData.personal.location;
             document.getElementById('email').textContent = portfolioData.personal.email;
             document.getElementById('phone').textContent = portfolioData.personal.phone.join(', ');
